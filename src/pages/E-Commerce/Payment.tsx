@@ -11,7 +11,7 @@ import { selectUser } from "../../store/userSlice";
 import { selectCart, selectCartItems } from "../../store/cartSlice";
 
 const stripePromise = loadStripe(
-  String(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY)
+  "pk_test_51LC9yhSE5P4xQp6tex03MR2aoEiW5ZP1HvJ4ArhnZ4dN7fbBn5K6wlMrczHkpUJQSMLnr8ImJRE3G3rc17H1FPdg006fkGsf4G"
 );
 
 const Payment = () => {
