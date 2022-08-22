@@ -65,7 +65,7 @@ const PaymentForm = ({ name, address }) => {
       elements,
 
       confirmParams: {
-        return_url: "http://127.0.0.1:3000/success",
+        return_url: "https://chainkartshop.netlify.app//success",
 
         payment_method_data: {
           billing_details: {
