@@ -1,4 +1,5 @@
 import React, { lazy, Suspense } from "react";
+import { isMobile } from "react-device-detect";
 import { Route, Routes } from "react-router-dom";
 
 const Main = lazy(() => import("../../components/E-Commerce/Main/Main"));
@@ -9,6 +10,10 @@ const Navbar = lazy(() => import("../../components/E-Commerce/Navbar"));
 const Footer = lazy(() => import("../../components/E-Commerce/Footer"));
 
 const Home = () => {
+  if (isMobile) {
+    return <div>Sorry this website is not available on mobile devices</div>;
+  }
+
   return (
     <>
       <Suspense fallback={<div>Loading...</div>}>
