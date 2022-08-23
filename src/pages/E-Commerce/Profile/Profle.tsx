@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import { Link } from "react-router-dom";
+import Scroll from "../../../components/E-Commerce/Scroll";
 import { useAppSelector } from "../../../store/hooks";
 import { selectUser } from "../../../store/userSlice";
 
@@ -17,7 +18,7 @@ const Profile = () => {
     <>
       {user ? (
         <div className="min-h-screen overflow-x-scroll flex gap-3">
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<Scroll />}>
             <Sidebar />
             <div className="flex-[6]">
               <Routes>

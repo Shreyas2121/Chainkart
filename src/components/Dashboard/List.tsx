@@ -9,30 +9,14 @@ import {
 } from "@mui/material";
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { useSelector } from "react-redux";
 import { fetchT } from "../../store/api";
 import { useAppSelector } from "../../store/hooks";
 import { selectComapny } from "../../store/companySlice";
 import { formatPrice } from "../../utils";
 
-const TableContainer1 = styled(TableContainer)``;
-
 const CellWrapper = styled.div`
   display: flex;
   align-items: center;
-`;
-
-const Image1 = styled.img`
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  margin-right: 10px;
-  object-fit: cover;
-`;
-
-const Status = styled.span`
-  padding: 5px;
-  border-radius: 5px;
 `;
 
 const List = () => {
@@ -47,13 +31,14 @@ const List = () => {
       const res = await fetchT(company?.email);
       setCustomers(res.data.name);
       setTransactions(res.data.orders);
+
       setDates(res.data.date);
     };
     fetchTransaction();
   }, []);
 
   return (
-    <TableContainer1 component={Paper}>
+    <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
@@ -86,7 +71,7 @@ const List = () => {
           })}
         </TableBody>
       </Table>
-    </TableContainer1>
+    </TableContainer>
   );
 };
 

@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from "react";
 
 import styled from "styled-components";
+import Scroll from "../../../components/E-Commerce/Scroll";
 
 const Widget = lazy(
   () => import("../../../components/Dashboard/widget/Widget")
@@ -34,7 +35,7 @@ const ListTitle = styled.div`
 const DashHome = () => {
   return (
     <>
-      <Suspense fallback={<div>Loading..</div>}>
+      <Suspense fallback={<Scroll />}>
         <Widgets>
           <Widget type="p_sold" />
           <Widget type="earning" />

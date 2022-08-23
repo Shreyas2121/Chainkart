@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from "react";
 import { isMobile } from "react-device-detect";
 import { Route, Routes } from "react-router-dom";
+import Scroll from "../../components/E-Commerce/Scroll";
 
 const Main = lazy(() => import("../../components/E-Commerce/Main/Main"));
 const Cart = lazy(() => import("./Cart"));
@@ -11,12 +12,18 @@ const Footer = lazy(() => import("../../components/E-Commerce/Footer"));
 
 const Home = () => {
   if (isMobile) {
-    return <div>Sorry this website is not available on mobile devices</div>;
+    return (
+      <div className="min-h-screen flex justify-center items-center">
+        <span className="font-bold">
+          Sorry this website is not available on mobile devices.
+        </span>
+      </div>
+    );
   }
 
   return (
     <>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<Scroll />}>
         <Navbar />
         <Routes>
           <Route path="/*" element={<Main />} />

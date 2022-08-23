@@ -4,6 +4,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import styled from "styled-components";
 import { useAppSelector } from "../../../store/hooks";
 import { selectComapny } from "../../../store/companySlice";
+import Scroll from "../../../components/E-Commerce/Scroll";
 
 const CProfile = lazy(() => import("../cprofile"));
 const DashHome = lazy(() => import("./DashHome"));
@@ -29,7 +30,7 @@ const Dashboard = () => {
         <Navigate to="/clogin" />
       ) : (
         <Container>
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<Scroll />}>
             <SideBar />
             <Container2>
               <TitleBar />

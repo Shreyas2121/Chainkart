@@ -4,6 +4,7 @@ import { ToastContainer } from "react-toastify";
 import React, { useEffect, useState, lazy, Suspense } from "react";
 import LoadingBar from "react-top-loading-bar";
 import { CircularProgress } from "@mui/material";
+import Scroll from "./components/E-Commerce/Scroll";
 
 const Home = lazy(() => import("./pages/E-Commerce/Home"));
 const UserLogin = lazy(() => import("./pages/Auth/userlogin"));
@@ -33,7 +34,7 @@ const App = () => {
         waitingTime={400}
         onLoaderFinished={() => setProgress(0)}
       />
-      <Suspense fallback={<CircularProgress />}>
+      <Suspense fallback={<Scroll />}>
         <Routes>
           <Route path="/*" element={<Home />} />
           <Route path="login" element={<UserLogin />} />

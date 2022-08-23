@@ -7,21 +7,6 @@ import { useAppSelector } from "../../../store/hooks";
 import { selectComapny } from "../../../store/companySlice";
 import { Product } from "../../../types";
 
-const DataTable1 = styled.div`
-  height: 600px;
-  padding: 20px;
-`;
-
-const DataTableTitle = styled.div`
-  width: 100%;
-  font-size: 24px;
-  color: gray;
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-`;
-
 const ProductTable = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const company = useAppSelector(selectComapny);

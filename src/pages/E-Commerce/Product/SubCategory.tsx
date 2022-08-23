@@ -3,6 +3,7 @@ import axios from "axios";
 import React, { useState, lazy, Suspense } from "react";
 import { useEffect } from "react";
 import { Routes, useParams, Route } from "react-router-dom";
+import Scroll from "../../../components/E-Commerce/Scroll";
 import { Product } from "../../../types";
 
 const Products = lazy(
@@ -34,7 +35,7 @@ const SubCategory = () => {
       {loading ? (
         <CircularProgress className="ml-[12rem]" />
       ) : (
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<Scroll />}>
           <Routes>
             <Route
               path="/"

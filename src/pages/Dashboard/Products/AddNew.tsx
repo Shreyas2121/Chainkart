@@ -1,6 +1,5 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { createProduct, selectP } from "../../../store/productSlice";
 import { CircularProgress } from "@mui/material";

@@ -1,5 +1,6 @@
 import { CircularProgress } from "@mui/material";
 import React, { lazy, Suspense } from "react";
+import Scroll from "../Scroll";
 
 const Slider = lazy(() => import("./Slider"));
 const Preview = lazy(() => import("./Preview"));
@@ -10,7 +11,7 @@ const AboutUs = lazy(() => import("./AboutUs"));
 const Main = () => {
   return (
     <div>
-      <Suspense fallback={<CircularProgress />}>
+      <Suspense fallback={<Scroll />}>
         <Slider />
         <Preview />
         <NewArrival />
