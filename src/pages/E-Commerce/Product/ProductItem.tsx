@@ -12,7 +12,9 @@ interface IProps {
 
 const ProductItem = ({ products }: IProps) => {
   const { productName } = useParams();
+  console.log(products);
   const product = products.filter((product) => product.name === productName)[0];
+  console.log(product);
   const dispatch = useAppDispatch();
 
   const handleAdd = (product: any) => {
