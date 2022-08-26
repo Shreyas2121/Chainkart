@@ -67,7 +67,7 @@ function UserLogin() {
                   name="email"
                   onChange={onInputChange}
                   className="w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm"
-                  required={true}
+                  required
                 />
 
                 <span className="absolute inset-y-0 inline-flex items-center right-4">
@@ -89,6 +89,7 @@ function UserLogin() {
                   type={passShow ? "text" : "password"}
                   name="password"
                   id="password"
+                  required
                   onChange={onInputChange}
                   className="w-full p-4 pr-12 text-sm  border-gray-200 rounded-lg shadow-sm   "
 

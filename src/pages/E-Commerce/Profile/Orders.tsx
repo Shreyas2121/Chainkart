@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Scroll from "../../../components/E-Commerce/Scroll";
 import { fetchOrders } from "../../../store/api";
 import { useAppSelector } from "../../../store/hooks";
 import { selectUser } from "../../../store/userSlice";
@@ -7,15 +8,18 @@ import { Order } from "../../../types";
 const Orders = () => {
   const user = useAppSelector(selectUser);
   const [orders, setOrders] = useState<Order[]>([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchOrders1 = async () => {
+      setLoading(true);
       const res = await fetchOrders(user);
       setOrders(res.data.orders);
+      setLoading(false);
     };
     fetchOrders1();
   }, []);
-  return (
+  return !loading ? (
     <div className="flex justify-center items-center h-[70vh]">
       {orders.length > 0 ? (
         <div className="w-full h-full p-5 flex flex-col gap-10">
@@ -53,6 +57,8 @@ const Orders = () => {
         <div className="text-center text-2xl text-gray-500">No orders yet</div>
       )}
     </div>
+  ) : (
+    <Scroll />
   );
 };
 

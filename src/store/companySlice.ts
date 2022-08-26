@@ -11,7 +11,6 @@ export const loginCompany = createAsyncThunk(
       let comapny: any;
       const res = await api.cLogin(formData);
       const data = res.data;
-      console.log(data);
       if (data.message) {
         toast.error(data.message);
         return;

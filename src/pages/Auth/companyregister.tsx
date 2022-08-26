@@ -25,13 +25,7 @@ const CompanyRegister = () => {
   const handleUpload = (e: any, ex: number) => {
     e.preventDefault();
 
-    // if (!cImage || !panImage) {
-    //   toast.error("Please upload all the images");
-    //   return;
-    // }
-
     const uploadImage = (image: any, text: string) => {
-      // const random = Math.floor(Math.random() * 10000) + 1;
       const storageRef = ref(storage, `Documents/${text}/${name}`);
       const uploadTask = uploadBytesResumable(storageRef, image);
 

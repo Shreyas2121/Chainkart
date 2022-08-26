@@ -39,6 +39,20 @@ const UserSignUp = () => {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
 
+    if (
+      !formData.email ||
+      !formData.password ||
+      !formData.confirmPassword ||
+      !formData.firstname ||
+      !formData.lastname ||
+      !formData.city ||
+      !formData.state ||
+      !formData.pincode ||
+      !formData.landmark ||
+      !formData.hnumber
+    ) {
+      toast.error("Please Input Everything");
+    }
     if (password !== confirmPassword) {
       toast.error("Password and Confirm Password does not match");
     }

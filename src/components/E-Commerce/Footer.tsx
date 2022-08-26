@@ -35,7 +35,7 @@ const Footer = () => {
 
           <a
             className="logo bg-[#E4405F]"
-            href="https://www.instagram.com/invites/contact/?i=zj8u2jee0nxq&utm_content=p7gyhhz"
+            href="https://instagram.com/chainkart?igshid=YmMyMTA2M2Y="
             target="_blank"
             rel="noreferer"
           >
@@ -68,31 +68,31 @@ const Footer = () => {
             <li className="text-col">Home</li>
           </Link>
 
-          <Link to="/" className="w-1/2 mb-2">
-            <li className="text-col">Electronics</li>
+          <Link to="/Electronics/Laptops" className="w-1/2 mb-2">
+            <li className="text-col">Laptops</li>
           </Link>
 
-          <Link to="/" className="w-1/2 mb-2">
-            <li className="text-col">Fashion</li>
+          <Link to="/Fashion/Shirts" className="w-1/2 mb-2">
+            <li className="text-col">Shirts</li>
           </Link>
 
-          <Link to="/" className="w-1/2 mb-2">
-            <li className="text-col">Sports</li>
+          <Link to="/Sports/Cricket" className="w-1/2 mb-2">
+            <li className="text-col">Cricket</li>
           </Link>
 
-          <Link to="/" className="w-1/2 mb-2">
-            <li className="text-col">Books</li>
+          <Link to="/Books/Textbook" className="w-1/2 mb-2">
+            <li className="text-col">Textbooks</li>
           </Link>
 
-          <Link to="/" className="w-1/2 mb-2">
-            <li className="text-col">Terms</li>
+          <Link to="/Fashion/Shoes" className="w-1/2 mb-2">
+            <li className="text-col">Shoes</li>
           </Link>
 
-          <Link to="/" className="w-1/2 mb-2">
-            <li className="text-col">Home Appliances</li>
+          <Link to="/Home_Appliances/Television" className="w-1/2 mb-2">
+            <li className="text-col">Television</li>
           </Link>
 
-          <Link to="/" className="w-1/2 mb-2">
+          <Link to="/profile" className="w-1/2 mb-2">
             <li className="text-col">My Account</li>
           </Link>
         </ul>
@@ -100,15 +100,20 @@ const Footer = () => {
       <div className="flex-[1] p-5 opacity-75">
         <h1 className="font-bold mb-7">Contact</h1>
         <div className="mb-5 flex items-center">
-          <Room className="mr-2" /> Verna, Goa - 403722
+          <a
+            href="https://www.google.com/maps/place/Verna,+Goa/@15.3650113,73.9148114,13z/data=!3m1!4b1!4m5!3m4!1s0x3bbfb736dff65a8d:0xe7e9adcdf39c685d!8m2!3d15.3664574!4d73.947008"
+            target="_blank"
+          >
+            <Room className="mr-2" /> Verna, Goa - 403722
+          </a>
         </div>
 
         <div className="mb-5 flex items-center">
-          <Phone className="mr-2" /> +91 12345678
+          <Phone className="mr-2" /> +91 9146115551
         </div>
 
         <div className="mb-5 flex items-center">
-          <MailOutline className="mr-2" /> chainkart@gmail.com
+          <MailOutline className="mr-2" /> chainkart12@gmail.com
         </div>
       </div>
     </div>

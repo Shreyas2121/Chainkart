@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
-import styled from "styled-components";
-import { fetchProducts } from "../../../store/api";
+import { AiFillDelete } from "react-icons/ai";
+import { deleteProduct, fetchProducts } from "../../../store/api";
 import { useAppSelector } from "../../../store/hooks";
 import { selectComapny } from "../../../store/companySlice";
 import { Product } from "../../../types";
+import { toast } from "react-toastify";
 
 const ProductTable = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -18,6 +18,12 @@ const ProductTable = () => {
     };
     getProducts();
   }, []);
+
+  const handleDelete = async (id: string) => {
+    const res = await deleteProduct(id);
+    toast.error("Product deleted successfully");
+  };
+
   return (
     <div className="flex justify-center items-center h-[70vh] flex-col">
       <Link
@@ -38,6 +44,7 @@ const ProductTable = () => {
               <th>Category</th>
               <th>Subcategory</th>
               <th></th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -53,6 +60,12 @@ const ProductTable = () => {
                   className="cursor-pointer text-center text-indigo-600 rounded-3xl'"
                 >
                   Update
+                </td>
+                <td
+                  className="cursor-pointer text-red-400"
+                  onClick={() => handleDelete(product._id)}
+                >
+                  <AiFillDelete size={30} />
                 </td>
               </tr>
             ))}

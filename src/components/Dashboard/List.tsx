@@ -13,6 +13,7 @@ import { fetchT } from "../../store/api";
 import { useAppSelector } from "../../store/hooks";
 import { selectComapny } from "../../store/companySlice";
 import { formatPrice } from "../../utils";
+import Scroll from "../E-Commerce/Scroll";
 
 const CellWrapper = styled.div`
   display: flex;
@@ -25,19 +26,22 @@ const List = () => {
   const [transactions, setTransactions] = useState([]);
   const [customers, setCustomers] = useState([]);
   const [dates, setDates] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchTransaction = async () => {
+      setLoading(true);
       const res = await fetchT(company?.email);
       setCustomers(res.data.name);
       setTransactions(res.data.orders);
 
       setDates(res.data.date);
+      setLoading(false);
     };
     fetchTransaction();
   }, []);
 
-  return (
+  return !loading ? (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
@@ -72,6 +76,8 @@ const List = () => {
         </TableBody>
       </Table>
     </TableContainer>
+  ) : (
+    <Scroll />
   );
 };
 

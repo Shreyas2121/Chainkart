@@ -9,7 +9,7 @@ const Container = styled.div`
   position: relative;
   overflow: hidden;
   /* padding: 10px; */
-  margin-top: 10px;
+  /* margin-top: 10px; */
 `;
 
 const Arrow = styled.div`
@@ -85,19 +85,20 @@ const Button = styled.button`
 const sliderItems = [
   {
     id: 1,
-    img: "https://i.ibb.co/DG69bQ4/2.png",
-    title: "AUTUMN COLLECTION",
-    desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
-    bg: "fcf1ed",
-  },
-  {
-    id: 2,
     // img: "https://i.ibb.co/cXFnLLV/3.png",
     img: "https://m.media-amazon.com/images/I/61sDyXAepuL._SL1500_.jpg",
     title: "iPhone 13 Pro",
     desc: "Oh. So. Pro.",
     bg: "f0f8ff",
   },
+  {
+    id: 2,
+    img: "https://i.ibb.co/DG69bQ4/2.png",
+    title: "AUTUMN COLLECTION",
+    desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
+    bg: "fcf1ed",
+  },
+
   {
     id: 3,
     img: "https://images-na.ssl-images-amazon.com/images/I/81VStYnDGrL.jpg",

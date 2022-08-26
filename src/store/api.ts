@@ -57,10 +57,15 @@ export const fetchProducts = (cEmail: any) =>
     cEmail,
   });
 
+export const getAllP = () => API.get("/product/newarrivals");
+
 export const updateProduct = (data: any) => {
   // console.log(data);
   return API.put(`/product/update/${data.id}`, data);
 };
+
+export const deleteProduct = (id: string) =>
+  API.delete(`/product/delete/${id}`);
 
 export const fetchProductsByCat = (subCategory: string) =>
   API.post("/product/getBySubCat", subCategory);

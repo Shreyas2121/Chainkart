@@ -33,7 +33,7 @@ const SubCategory = () => {
   return (
     <>
       {loading ? (
-        <CircularProgress className="ml-[12rem]" />
+        <Scroll />
       ) : (
         <Suspense fallback={<Scroll />}>
           <Routes>

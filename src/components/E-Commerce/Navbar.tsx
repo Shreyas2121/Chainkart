@@ -4,7 +4,6 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { logoutUser, selectUser } from "../../store/userSlice";
-import { toast } from "react-toastify";
 import styled from "styled-components";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { selectCartItems } from "../../store/cartSlice";
@@ -22,6 +21,7 @@ const List = styled.li`
   font-weight: 600;
   font-size: 18px;
   color: rgb(0, 0, 0);
+  /* color: #4f46e5; */
 
   &:hover {
     cursor: pointer;
@@ -53,8 +53,11 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex justify-between w-full mt-9 ">
-      <NavLink to="/" className="text-[#0369a1] text-2xl font-bold px-3 ">
+    <div
+      className="flex justify-between w-full pt-9"
+      style={{ paddingBottom: "10px" }}
+    >
+      <NavLink to="/" className="text-[#0369a1] text-2xl font-bold px-3 font- ">
         Chainkart
       </NavLink>
 
@@ -150,7 +153,7 @@ const Navbar = () => {
         </Menu>
       </ul>
       <div className="px-3 flex gap-5">
-        <div className="bg-[#F0F8FF] rounded-full p-1 w-9 h-9 text-gray-500 flex items-center justify-center">
+        <div className="bg-[#F0F8FF] rounded-full p-1 w-9 h-9 text-emerald-300 flex items-center justify-center">
           <NavLink to="/profile">
             <PermIdentityOutlined />
           </NavLink>
@@ -159,13 +162,13 @@ const Navbar = () => {
           {user ? (
             <span
               onClick={handleLogOut}
-              className="hover mt-2 text-[18px] font-semibold text-[rgb(0,0,0,0.56)]"
+              className="hover mt-2 text-[18px] font-semibold "
             >
               Logout
             </span>
           ) : (
             <NavLink to="/login">
-              <span className="font-semibold text-gray-600 hover:text-indigo-500">
+              <span className="font-semibold text-indigo-600 hover:text-indigo-500">
                 Sign in
               </span>
             </NavLink>
@@ -173,7 +176,7 @@ const Navbar = () => {
         </div>
 
         <NavLink to="/cart">
-          <div className="bg-[#F0F8FF] rounded-full p-1 w-9 h-9 text-gray-500 flex items-center justify-center mr-2">
+          <div className="bg-[#F0F8FF] rounded-full p-1 w-9 h-9 text-emerald-300 flex items-center justify-center mr-2">
             <Badge badgeContent={items.length} color="primary">
               <ShoppingBagOutlined />
             </Badge>
