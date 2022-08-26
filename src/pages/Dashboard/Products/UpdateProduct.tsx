@@ -16,9 +16,9 @@ const UpdateProduct = () => {
 
   const product = products.find((product: any) => product._id === id);
 
-  const [uName, setUName] = useState(product.name);
-  const [uPrice, setUPrice] = useState(product.price);
-  const [desc, setDesc] = useState(product.desc);
+  const [uName, setUName] = useState(product?.name);
+  const [uPrice, setUPrice] = useState(product?.price);
+  const [desc, setDesc] = useState(product?.desc);
 
   useEffect(() => {
     const getProducts = async () => {
