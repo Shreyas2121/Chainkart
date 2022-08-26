@@ -15,11 +15,10 @@ const UpdateProduct = () => {
   const [products, setProducts] = useState<any[]>([]);
 
   const product = products.find((product: any) => product._id === id);
-  console.log(product);
 
-  const [uName, setUName] = useState("");
-  const [uPrice, setUPrice] = useState(0);
-  const [desc, setDesc] = useState("");
+  const [uName, setUName] = useState(product.name);
+  const [uPrice, setUPrice] = useState(product.price);
+  const [desc, setDesc] = useState(product.desc);
 
   useEffect(() => {
     const getProducts = async () => {
@@ -33,9 +32,9 @@ const UpdateProduct = () => {
     e.preventDefault();
 
     const newProduct = {
-      name: product.name,
+      name: uName,
       price: uPrice,
-      desc: product.desc,
+      desc: desc,
       id,
     };
 
