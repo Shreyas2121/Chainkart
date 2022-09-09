@@ -98,6 +98,7 @@ const PaymentForm = ({ name, address }) => {
           className="button"
           disabled={isLoading || !stripe || !elements}
           id="submit"
+          type="submit"
         >
           <span id="button-text">
             {isLoading ? (
